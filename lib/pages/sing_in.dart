@@ -17,28 +17,35 @@ class SingIn extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.all(15),
-              child: Column(
-                children: [
-                  Text(
-                    "Get your groceries",
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    "with nectar",
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ],
-              ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Get your groceries",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "with nectar",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
           Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tpapp/pages/log_in.dart';
 
 class SelectLocation extends StatelessWidget {
   const SelectLocation({super.key});
@@ -39,6 +40,9 @@ class SelectLocation extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Text(
                       "Swithch on your location to stay in tune with",
                       style: TextStyle(
@@ -54,9 +58,30 @@ class SelectLocation extends StatelessWidget {
                           color: Colors.grey),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
-                    StaticDropdownScreen()
+                    StaticDropdownScreen(),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Container(
+                      width: 400,
+                      height: 75,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 82, 189, 84),
+                          borderRadius: BorderRadius.circular(17)),
+                      child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LogIn()));
+                          },
+                          child: Text(
+                            "Submit",
+                            style: TextStyle(color: Colors.white, fontSize: 25),
+                          )),
+                    )
                   ],
                 ),
               ),
@@ -85,10 +110,15 @@ class _StaticDropdownScreenState extends State<StaticDropdownScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Zone Dropdown
-        const Text("Your Zone"),
+        const Text(
+          "Your Zone",
+          style: TextStyle(fontSize: 20),
+        ),
         DropdownButtonFormField<String>(
           value: selectedZone,
-          hint: const Text("Select a zone"),
+          hint: const Text(
+            "Select a zone",
+          ),
           items: const [
             DropdownMenuItem(value: "Banasree", child: Text("Banasree")),
             DropdownMenuItem(value: "Uttara", child: Text("Uttara")),

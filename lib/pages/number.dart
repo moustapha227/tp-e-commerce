@@ -7,22 +7,13 @@ class Number extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueAccent,
+      ),
       body: SafeArea(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back,
-                size: 40,
-              ),
-            ),
-          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(30),
