@@ -8,7 +8,7 @@ class Number extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.white,
       ),
       body: SafeArea(
           child: Column(

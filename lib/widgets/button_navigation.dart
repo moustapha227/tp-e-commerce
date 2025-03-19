@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tpapp/pages/homepage.dart';
+import 'package:tpapp/pages/list_product_category.dart';
 
 class ButtonNavigation extends StatefulWidget {
   const ButtonNavigation({super.key});
@@ -13,6 +14,7 @@ class _ButtonNavigationState extends State<ButtonNavigation> {
 
   final List pages = [
     const MyHomePage(),
+    const ListProductCategory(),
     const Scaffold(),
     const Scaffold(),
     const Scaffold(),

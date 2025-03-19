@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tpapp/pages/show_product.dart';
 import '../models/product_fruit.dart';
 
 class ProductCard extends StatelessWidget {
@@ -20,7 +21,13 @@ class ProductCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(product.image, height: 80),
+          GestureDetector(
+            child: Image.asset(product.image, height: 80),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ShowProduct(product: product))),
+          ),
           SizedBox(
             height: 5,
           ),

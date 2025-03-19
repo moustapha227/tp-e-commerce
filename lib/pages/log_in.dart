@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tpapp/pages/homepage.dart';
 import 'package:tpapp/pages/number.dart';
 import 'package:tpapp/pages/sign_up.dart';
+import 'package:tpapp/widgets/button_navigation.dart';
 
 class LogIn extends StatelessWidget {
   const LogIn({super.key});
@@ -91,8 +93,10 @@ class LogIn extends StatelessWidget {
                         borderRadius: BorderRadius.circular(17)),
                     child: TextButton(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => LogIn()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ButtonNavigation()));
                         },
                         child: Text(
                           "Log In",

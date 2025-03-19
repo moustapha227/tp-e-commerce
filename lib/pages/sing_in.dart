@@ -51,6 +51,10 @@ class SingIn extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(20),
             child: TextFormField(
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Number()));
+              },
               decoration: InputDecoration(
                 prefixIcon: Padding(
                   padding: EdgeInsets.all(8.0),
