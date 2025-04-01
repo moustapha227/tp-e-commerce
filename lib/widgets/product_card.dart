@@ -1,11 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tpapp/pages/show_product.dart';
+import 'package:tpapp/provider/cart_provider.dart';
 import '../models/product_fruit.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
 
   const ProductCard({super.key, required this.product});
+
+  void addToCart(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: Text("Add this item to the cart?"),
+        actions: [
+          MaterialButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text("Cancel"),
+          ),
+          MaterialButton(
+            onPressed: () {
+              Navigator.pop(context);
+              context.read<CartProvider>().addToCart(product);
+            },
+            child: Text("Yes"),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +76,7 @@ class ProductCard extends StatelessWidget {
                       color: Colors.white,
                       size: 30,
                     ),
-                    onPressed: () {},
+                    onPressed: () => addToCart(context),
                   ),
                 ),
               ],

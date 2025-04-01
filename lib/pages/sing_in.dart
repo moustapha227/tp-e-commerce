@@ -74,10 +74,7 @@ class SingIn extends StatelessWidget {
             height: 30,
           ),
           ElevatedButton.icon(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Number()));
-            },
+            onPressed: () {},
             icon: Icon(
               FontAwesomeIcons.google,
               color: Colors.white,

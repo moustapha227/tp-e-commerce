@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tpapp/pages/account.dart';
+import 'package:tpapp/pages/cart.dart';
+import 'package:tpapp/pages/favorite.dart';
 import 'package:tpapp/pages/homepage.dart';
 import 'package:tpapp/pages/list_product_category.dart';
 
@@ -15,9 +18,9 @@ class _ButtonNavigationState extends State<ButtonNavigation> {
   final List pages = [
     const MyHomePage(),
     const ListProductCategory(),
-    const Scaffold(),
-    const Scaffold(),
-    const Scaffold(),
+    const MyCart(),
+    const Favorite(),
+    const ProfilePage(),
   ];
 
   @override
@@ -25,8 +28,8 @@ class _ButtonNavigationState extends State<ButtonNavigation> {
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.black38,
-        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.green,
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
         onTap: (value) {
@@ -42,8 +45,9 @@ class _ButtonNavigationState extends State<ButtonNavigation> {
           BottomNavigationBarItem(
               icon: Icon(Icons.card_travel_outlined), label: "Cart"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: "Favorite"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
+              icon: Icon(Icons.favorite_border), label: "Favorite"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_2_rounded), label: "Account"),
         ],
       ),
       body: pages[selectedIndex],
